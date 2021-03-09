@@ -15,7 +15,7 @@ namespace Square.Models
 {
     public class Order 
     {
-        public Order(string locationId,
+        public Order(string locationId = null,
             string id = null,
             string referenceId = null,
             Models.OrderSource source = null,
