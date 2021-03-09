@@ -28,7 +28,7 @@ namespace Square.Models
         /// Unique ID that identifies the applied tax only within this order.
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Uid { get; }
+        public string Uid { get; set; }
 
         /// <summary>
         /// The `uid` of the tax for which this applied tax represents.  Must reference
@@ -37,7 +37,7 @@ namespace Square.Models
         /// `OrderLineItemAppliedTax`s.
         /// </summary>
         [JsonProperty("tax_uid")]
-        public string TaxUid { get; }
+        public string TaxUid { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -48,7 +48,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("applied_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money AppliedMoney { get; }
+        public Models.Money AppliedMoney { get; set; }
 
         public override string ToString()
         {

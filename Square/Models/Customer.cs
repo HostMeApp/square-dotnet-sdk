@@ -60,67 +60,67 @@ namespace Square.Models
         /// A unique Square-assigned ID for the customer profile.
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The timestamp when the customer profile was created, in RFC 3339 format.
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; }
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// The timestamp when the customer profile was last updated, in RFC 3339 format.
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAt { get; }
+        public string UpdatedAt { get; set; }
 
         /// <summary>
         /// Payment details of cards stored on file for the customer profile.
         /// </summary>
         [JsonProperty("cards", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.Card> Cards { get; }
+        public IList<Models.Card> Cards { get; set; }
 
         /// <summary>
         /// The given (i.e., first) name associated with the customer profile.
         /// </summary>
         [JsonProperty("given_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string GivenName { get; }
+        public string GivenName { get; set; }
 
         /// <summary>
         /// The family (i.e., last) name associated with the customer profile.
         /// </summary>
         [JsonProperty("family_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string FamilyName { get; }
+        public string FamilyName { get; set; }
 
         /// <summary>
         /// A nickname for the customer profile.
         /// </summary>
         [JsonProperty("nickname", NullValueHandling = NullValueHandling.Ignore)]
-        public string Nickname { get; }
+        public string Nickname { get; set; }
 
         /// <summary>
         /// A business name associated with the customer profile.
         /// </summary>
         [JsonProperty("company_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string CompanyName { get; }
+        public string CompanyName { get; set; }
 
         /// <summary>
         /// The email address associated with the customer profile.
         /// </summary>
         [JsonProperty("email_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string EmailAddress { get; }
+        public string EmailAddress { get; set; }
 
         /// <summary>
         /// Represents a physical address.
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address Address { get; }
+        public Models.Address Address { get; set; }
 
         /// <summary>
         /// The 11-digit phone number associated with the customer profile.
         /// </summary>
         [JsonProperty("phone_number", NullValueHandling = NullValueHandling.Ignore)]
-        public string PhoneNumber { get; }
+        public string PhoneNumber { get; set; }
 
         /// <summary>
         /// The birthday associated with the customer profile, in RFC 3339 format.
@@ -129,50 +129,50 @@ namespace Square.Models
         /// `1998-09-01T00:00:00-00:00` indications a birthday on September 1st __1998__.
         /// </summary>
         [JsonProperty("birthday", NullValueHandling = NullValueHandling.Ignore)]
-        public string Birthday { get; }
+        public string Birthday { get; set; }
 
         /// <summary>
         /// An optional, second ID used to associate the customer profile with an
         /// entity in another system.
         /// </summary>
         [JsonProperty("reference_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReferenceId { get; }
+        public string ReferenceId { get; set; }
 
         /// <summary>
         /// A custom note associated with the customer profile.
         /// </summary>
         [JsonProperty("note", NullValueHandling = NullValueHandling.Ignore)]
-        public string Note { get; }
+        public string Note { get; set; }
 
         /// <summary>
         /// Represents communication preferences for the customer profile.
         /// </summary>
         [JsonProperty("preferences", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.CustomerPreferences Preferences { get; }
+        public Models.CustomerPreferences Preferences { get; set; }
 
         /// <summary>
         /// The customer groups and segments the customer belongs to. This deprecated field has been replaced with  the dedicated `group_ids` for customer groups and the dedicated `segment_ids` field for customer segments. You can retrieve information about a given customer group and segment respectively using the Customer Groups API and Customer Segments API.
         /// </summary>
         [JsonProperty("groups", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.CustomerGroupInfo> Groups { get; }
+        public IList<Models.CustomerGroupInfo> Groups { get; set; }
 
         /// <summary>
         /// Indicates the method used to create the customer profile.
         /// </summary>
         [JsonProperty("creation_source", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreationSource { get; }
+        public string CreationSource { get; set; }
 
         /// <summary>
         /// The IDs of customer groups the customer belongs to.
         /// </summary>
         [JsonProperty("group_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<string> GroupIds { get; }
+        public IList<string> GroupIds { get; set; }
 
         /// <summary>
         /// The IDs of segments the customer belongs to.
         /// </summary>
         [JsonProperty("segment_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<string> SegmentIds { get; }
+        public IList<string> SegmentIds { get; set; }
 
         public override string ToString()
         {

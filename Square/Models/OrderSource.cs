@@ -25,7 +25,7 @@ namespace Square.Models
         /// If unset, the name defaults to the name of the application that created the order.
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; }
+        public string Name { get; set; }
 
         public override string ToString()
         {

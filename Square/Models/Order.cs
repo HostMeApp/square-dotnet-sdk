@@ -80,38 +80,38 @@ namespace Square.Models
         /// The order's unique ID.
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The ID of the merchant location this order is associated with.
         /// </summary>
         [JsonProperty("location_id")]
-        public string LocationId { get; }
+        public string LocationId { get; set; }
 
         /// <summary>
         /// A client specified identifier to associate an entity in another system
         /// with this order.
         /// </summary>
         [JsonProperty("reference_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReferenceId { get; }
+        public string ReferenceId { get; set; }
 
         /// <summary>
         /// Represents the origination details of an order.
         /// </summary>
         [JsonProperty("source", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderSource Source { get; }
+        public Models.OrderSource Source { get; set; }
 
         /// <summary>
         /// The [Customer](#type-customer) ID of the customer associated with the order.
         /// </summary>
         [JsonProperty("customer_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CustomerId { get; }
+        public string CustomerId { get; set; }
 
         /// <summary>
         /// The line items included in the order.
         /// </summary>
         [JsonProperty("line_items", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItem> LineItems { get; }
+        public IList<Models.OrderLineItem> LineItems { get; set; }
 
         /// <summary>
         /// The list of all taxes associated with the order.
@@ -124,7 +124,7 @@ namespace Square.Models
         /// instead.
         /// </summary>
         [JsonProperty("taxes", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemTax> Taxes { get; }
+        public IList<Models.OrderLineItemTax> Taxes { get; set; }
 
         /// <summary>
         /// The list of all discounts associated with the order.
@@ -137,13 +137,13 @@ namespace Square.Models
         /// instead.
         /// </summary>
         [JsonProperty("discounts", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemDiscount> Discounts { get; }
+        public IList<Models.OrderLineItemDiscount> Discounts { get; set; }
 
         /// <summary>
         /// A list of service charges applied to the order.
         /// </summary>
         [JsonProperty("service_charges", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderServiceCharge> ServiceCharges { get; }
+        public IList<Models.OrderServiceCharge> ServiceCharges { get; set; }
 
         /// <summary>
         /// Details on order fulfillment.
@@ -151,7 +151,7 @@ namespace Square.Models
         /// by the API may contain multiple fulfillments.
         /// </summary>
         [JsonProperty("fulfillments", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderFulfillment> Fulfillments { get; }
+        public IList<Models.OrderFulfillment> Fulfillments { get; set; }
 
         /// <summary>
         /// Collection of items from sale Orders being returned in this one. Normally part of an
@@ -159,38 +159,38 @@ namespace Square.Models
         /// referenced.
         /// </summary>
         [JsonProperty("returns", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderReturn> Returns { get; }
+        public IList<Models.OrderReturn> Returns { get; set; }
 
         /// <summary>
         /// A collection of various money amounts.
         /// </summary>
         [JsonProperty("return_amounts", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderMoneyAmounts ReturnAmounts { get; }
+        public Models.OrderMoneyAmounts ReturnAmounts { get; set; }
 
         /// <summary>
         /// A collection of various money amounts.
         /// </summary>
         [JsonProperty("net_amounts", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderMoneyAmounts NetAmounts { get; }
+        public Models.OrderMoneyAmounts NetAmounts { get; set; }
 
         /// <summary>
         /// A rounding adjustment of the money being returned. Commonly used to apply Cash Rounding
         /// when the minimum unit of account is smaller than the lowest physical denomination of currency.
         /// </summary>
         [JsonProperty("rounding_adjustment", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderRoundingAdjustment RoundingAdjustment { get; }
+        public Models.OrderRoundingAdjustment RoundingAdjustment { get; set; }
 
         /// <summary>
         /// The Tenders which were used to pay for the Order.
         /// </summary>
         [JsonProperty("tenders", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.Tender> Tenders { get; }
+        public IList<Models.Tender> Tenders { get; set; }
 
         /// <summary>
         /// The Refunds that are part of this Order.
         /// </summary>
         [JsonProperty("refunds", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.Refund> Refunds { get; }
+        public IList<Models.Refund> Refunds { get; set; }
 
         /// <summary>
         /// Application-defined data attached to this order. Metadata fields are intended
@@ -208,31 +208,31 @@ namespace Square.Models
         /// See [Metadata](https://developer.squareup.com/docs/build-basics/metadata) for more information.
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public IDictionary<string, string> Metadata { get; }
+        public IDictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// Timestamp for when the order was created. In RFC 3339 format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; }
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// Timestamp for when the order was last updated. In RFC 3339 format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAt { get; }
+        public string UpdatedAt { get; set; }
 
         /// <summary>
         /// Timestamp for when the order reached a terminal [state](#property-state). In RFC 3339 format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("closed_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string ClosedAt { get; }
+        public string ClosedAt { get; set; }
 
         /// <summary>
         /// The state of the order.
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public string State { get; }
+        public string State { get; set; }
 
         /// <summary>
         /// Version number which is incremented each time an update is committed to the order.
@@ -241,7 +241,7 @@ namespace Square.Models
         /// [Read more about working with versions](https://developer.squareup.com/docs/orders-api/manage-orders#update-orders).
         /// </summary>
         [JsonProperty("version", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Version { get; }
+        public int? Version { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -252,7 +252,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalMoney { get; }
+        public Models.Money TotalMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -263,7 +263,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_tax_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalTaxMoney { get; }
+        public Models.Money TotalTaxMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -274,7 +274,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_discount_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalDiscountMoney { get; }
+        public Models.Money TotalDiscountMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -285,7 +285,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_tip_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalTipMoney { get; }
+        public Models.Money TotalTipMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -296,7 +296,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_service_charge_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalServiceChargeMoney { get; }
+        public Models.Money TotalServiceChargeMoney { get; set; }
 
         /// <summary>
         /// Pricing options for an order. The options affect how the order's price is calculated.
@@ -304,13 +304,13 @@ namespace Square.Models
         /// [pricing rules](https://developer.squareup.com/docs/reference/square/objects/CatalogPricingRule).
         /// </summary>
         [JsonProperty("pricing_options", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderPricingOptions PricingOptions { get; }
+        public Models.OrderPricingOptions PricingOptions { get; set; }
 
         /// <summary>
         /// A set-like list of rewards that have been added to the order.
         /// </summary>
         [JsonProperty("rewards", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderReward> Rewards { get; }
+        public IList<Models.OrderReward> Rewards { get; set; }
 
         public override string ToString()
         {

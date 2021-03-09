@@ -56,95 +56,95 @@ namespace Square.Models
         /// details are provided in other fields).
         /// </summary>
         [JsonProperty("address_line_1", NullValueHandling = NullValueHandling.Ignore)]
-        public string AddressLine1 { get; }
+        public string AddressLine1 { get; set; }
 
         /// <summary>
         /// The second line of the address, if any.
         /// </summary>
         [JsonProperty("address_line_2", NullValueHandling = NullValueHandling.Ignore)]
-        public string AddressLine2 { get; }
+        public string AddressLine2 { get; set; }
 
         /// <summary>
         /// The third line of the address, if any.
         /// </summary>
         [JsonProperty("address_line_3", NullValueHandling = NullValueHandling.Ignore)]
-        public string AddressLine3 { get; }
+        public string AddressLine3 { get; set; }
 
         /// <summary>
         /// The city or town of the address.
         /// </summary>
         [JsonProperty("locality", NullValueHandling = NullValueHandling.Ignore)]
-        public string Locality { get; }
+        public string Locality { get; set; }
 
         /// <summary>
         /// A civil region within the address's `locality`, if any.
         /// </summary>
         [JsonProperty("sublocality", NullValueHandling = NullValueHandling.Ignore)]
-        public string Sublocality { get; }
+        public string Sublocality { get; set; }
 
         /// <summary>
         /// A civil region within the address's `sublocality`, if any.
         /// </summary>
         [JsonProperty("sublocality_2", NullValueHandling = NullValueHandling.Ignore)]
-        public string Sublocality2 { get; }
+        public string Sublocality2 { get; set; }
 
         /// <summary>
         /// A civil region within the address's `sublocality_2`, if any.
         /// </summary>
         [JsonProperty("sublocality_3", NullValueHandling = NullValueHandling.Ignore)]
-        public string Sublocality3 { get; }
+        public string Sublocality3 { get; set; }
 
         /// <summary>
         /// A civil entity within the address's country. In the US, this
         /// is the state.
         /// </summary>
         [JsonProperty("administrative_district_level_1", NullValueHandling = NullValueHandling.Ignore)]
-        public string AdministrativeDistrictLevel1 { get; }
+        public string AdministrativeDistrictLevel1 { get; set; }
 
         /// <summary>
         /// A civil entity within the address's `administrative_district_level_1`.
         /// In the US, this is the county.
         /// </summary>
         [JsonProperty("administrative_district_level_2", NullValueHandling = NullValueHandling.Ignore)]
-        public string AdministrativeDistrictLevel2 { get; }
+        public string AdministrativeDistrictLevel2 { get; set; }
 
         /// <summary>
         /// A civil entity within the address's `administrative_district_level_2`,
         /// if any.
         /// </summary>
         [JsonProperty("administrative_district_level_3", NullValueHandling = NullValueHandling.Ignore)]
-        public string AdministrativeDistrictLevel3 { get; }
+        public string AdministrativeDistrictLevel3 { get; set; }
 
         /// <summary>
         /// The address's postal code.
         /// </summary>
         [JsonProperty("postal_code", NullValueHandling = NullValueHandling.Ignore)]
-        public string PostalCode { get; }
+        public string PostalCode { get; set; }
 
         /// <summary>
         /// Indicates the country associated with another entity, such as a business.
         /// Values are in [ISO 3166-1-alpha-2 format](http://www.iso.org/iso/home/standards/country_codes.htm).
         /// </summary>
         [JsonProperty("country", NullValueHandling = NullValueHandling.Ignore)]
-        public string Country { get; }
+        public string Country { get; set; }
 
         /// <summary>
         /// Optional first name when it's representing recipient.
         /// </summary>
         [JsonProperty("first_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string FirstName { get; }
+        public string FirstName { get; set; }
 
         /// <summary>
         /// Optional last name when it's representing recipient.
         /// </summary>
         [JsonProperty("last_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string LastName { get; }
+        public string LastName { get; set; }
 
         /// <summary>
         /// Optional organization name when it's representing recipient.
         /// </summary>
         [JsonProperty("organization", NullValueHandling = NullValueHandling.Ignore)]
-        public string Organization { get; }
+        public string Organization { get; set; }
 
         public override string ToString()
         {

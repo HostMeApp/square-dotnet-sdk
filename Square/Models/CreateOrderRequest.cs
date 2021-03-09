@@ -30,7 +30,7 @@ namespace Square.Models
         /// itemization data.
         /// </summary>
         [JsonProperty("order", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Order Order { get; }
+        public Models.Order Order { get; set; }
 
         /// <summary>
         /// A value you specify that uniquely identifies this
@@ -41,7 +41,7 @@ namespace Square.Models
         /// See [Idempotency](https://developer.squareup.com/docs/basics/api101/idempotency) for more information.
         /// </summary>
         [JsonProperty("idempotency_key", NullValueHandling = NullValueHandling.Ignore)]
-        public string IdempotencyKey { get; }
+        public string IdempotencyKey { get; set; }
 
         public override string ToString()
         {

@@ -29,14 +29,14 @@ namespace Square.Models
         /// field description to determine the meaning of the sign in a particular case.
         /// </summary>
         [JsonProperty("amount", NullValueHandling = NullValueHandling.Ignore)]
-        public long? Amount { get; }
+        public long? Amount { get; set; }
 
         /// <summary>
         /// Indicates the associated currency for an amount of money. Values correspond
         /// to [ISO 4217](https://wikipedia.org/wiki/ISO_4217).
         /// </summary>
         [JsonProperty("currency", NullValueHandling = NullValueHandling.Ignore)]
-        public string Currency { get; }
+        public string Currency { get; set; }
 
         public override string ToString()
         {

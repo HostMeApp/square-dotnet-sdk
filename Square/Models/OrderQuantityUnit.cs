@@ -28,7 +28,7 @@ namespace Square.Models
         /// `area_unit`, `length_unit`, `volume_unit`, and `weight_unit`.
         /// </summary>
         [JsonProperty("measurement_unit", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.MeasurementUnit MeasurementUnit { get; }
+        public Models.MeasurementUnit MeasurementUnit { get; set; }
 
         /// <summary>
         /// For non-integer quantities, represents the number of digits after the decimal point that are
@@ -37,7 +37,7 @@ namespace Square.Models
         /// Min: 0. Max: 5.
         /// </summary>
         [JsonProperty("precision", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Precision { get; }
+        public int? Precision { get; set; }
 
         public override string ToString()
         {

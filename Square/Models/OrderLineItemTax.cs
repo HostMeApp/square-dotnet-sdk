@@ -40,25 +40,25 @@ namespace Square.Models
         /// Unique ID that identifies the tax only within this order.
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Uid { get; }
+        public string Uid { get; set; }
 
         /// <summary>
         /// The catalog object id referencing [CatalogTax](#type-catalogtax).
         /// </summary>
         [JsonProperty("catalog_object_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CatalogObjectId { get; }
+        public string CatalogObjectId { get; set; }
 
         /// <summary>
         /// The tax's name.
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Indicates how the tax is applied to the associated line item or order.
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; }
+        public string Type { get; set; }
 
         /// <summary>
         /// The percentage of the tax, as a string representation of a decimal
@@ -66,7 +66,7 @@ namespace Square.Models
         /// 7.25%.
         /// </summary>
         [JsonProperty("percentage", NullValueHandling = NullValueHandling.Ignore)]
-        public string Percentage { get; }
+        public string Percentage { get; set; }
 
         /// <summary>
         /// Application-defined data attached to this tax. Metadata fields are intended
@@ -84,7 +84,7 @@ namespace Square.Models
         /// See [Metadata](https://developer.squareup.com/docs/build-basics/metadata) for more information.
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public IDictionary<string, string> Metadata { get; }
+        public IDictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -95,13 +95,13 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("applied_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money AppliedMoney { get; }
+        public Models.Money AppliedMoney { get; set; }
 
         /// <summary>
         /// Indicates whether this is a line item or order level tax.
         /// </summary>
         [JsonProperty("scope", NullValueHandling = NullValueHandling.Ignore)]
-        public string Scope { get; }
+        public string Scope { get; set; }
 
         /// <summary>
         /// Determines whether the tax was automatically applied to the order based on
@@ -109,7 +109,7 @@ namespace Square.Models
         /// [Automatically Apply Taxes to an Order](https://developer.squareup.com/docs/orders-api/apply-taxes-and-discounts/auto-apply-taxes).
         /// </summary>
         [JsonProperty("auto_applied", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? AutoApplied { get; }
+        public bool? AutoApplied { get; set; }
 
         public override string ToString()
         {

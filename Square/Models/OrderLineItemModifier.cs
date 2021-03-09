@@ -32,19 +32,19 @@ namespace Square.Models
         /// Unique ID that identifies the modifier only within this order.
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Uid { get; }
+        public string Uid{ get; set; }
 
         /// <summary>
         /// The catalog object id referencing [CatalogModifier](#type-catalogmodifier).
         /// </summary>
         [JsonProperty("catalog_object_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CatalogObjectId { get; }
+        public string CatalogObjectId{ get; set; }
 
         /// <summary>
         /// The name of the item modifier.
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; }
+        public string Name{ get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -55,7 +55,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("base_price_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money BasePriceMoney { get; }
+        public Models.Money BasePriceMoney{ get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -66,7 +66,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_price_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalPriceMoney { get; }
+        public Models.Money TotalPriceMoney{ get; set; }
 
         public override string ToString()
         {

@@ -58,13 +58,13 @@ namespace Square.Models
         /// Unique ID that identifies the line item only within this order.
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Uid { get; }
+        public string Uid { get; set; }
 
         /// <summary>
         /// The name of the line item.
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
-        public string Name { get; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The quantity purchased, formatted as a decimal number.
@@ -75,32 +75,32 @@ namespace Square.Models
         /// For example: `"1.70000"`.
         /// </summary>
         [JsonProperty("quantity")]
-        public string Quantity { get; }
+        public string Quantity { get; set; }
 
         /// <summary>
         /// Contains the measurement unit for a quantity and a precision which
         /// specifies the number of digits after the decimal point for decimal quantities.
         /// </summary>
         [JsonProperty("quantity_unit", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderQuantityUnit QuantityUnit { get; }
+        public Models.OrderQuantityUnit QuantityUnit { get; set; }
 
         /// <summary>
         /// The note of the line item.
         /// </summary>
         [JsonProperty("note", NullValueHandling = NullValueHandling.Ignore)]
-        public string Note { get; }
+        public string Note { get; set; }
 
         /// <summary>
         /// The [CatalogItemVariation](#type-catalogitemvariation) id applied to this line item.
         /// </summary>
         [JsonProperty("catalog_object_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CatalogObjectId { get; }
+        public string CatalogObjectId { get; set; }
 
         /// <summary>
         /// The name of the variation applied to this line item.
         /// </summary>
         [JsonProperty("variation_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string VariationName { get; }
+        public string VariationName { get; set; }
 
         /// <summary>
         /// Application-defined data attached to this line item. Metadata fields are intended
@@ -118,13 +118,13 @@ namespace Square.Models
         /// See [Metadata](https://developer.squareup.com/docs/build-basics/metadata) for more information.
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public IDictionary<string, string> Metadata { get; }
+        public IDictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// The [CatalogModifier](#type-catalogmodifier)s applied to this line item.
         /// </summary>
         [JsonProperty("modifiers", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemModifier> Modifiers { get; }
+        public IList<Models.OrderLineItemModifier> Modifiers { get; set; }
 
         /// <summary>
         /// The list of references to taxes applied to this line item. Each
@@ -138,7 +138,7 @@ namespace Square.Models
         /// To change the amount of a tax, modify the referenced top-level tax.
         /// </summary>
         [JsonProperty("applied_taxes", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemAppliedTax> AppliedTaxes { get; }
+        public IList<Models.OrderLineItemAppliedTax> AppliedTaxes { get; set; }
 
         /// <summary>
         /// The list of references to discounts applied to this line item. Each
@@ -152,7 +152,7 @@ namespace Square.Models
         /// To change the amount of a discount, modify the referenced top-level discount.
         /// </summary>
         [JsonProperty("applied_discounts", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemAppliedDiscount> AppliedDiscounts { get; }
+        public IList<Models.OrderLineItemAppliedDiscount> AppliedDiscounts { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -163,7 +163,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("base_price_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money BasePriceMoney { get; }
+        public Models.Money BasePriceMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -174,7 +174,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("variation_total_price_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money VariationTotalPriceMoney { get; }
+        public Models.Money VariationTotalPriceMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -185,7 +185,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("gross_sales_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money GrossSalesMoney { get; }
+        public Models.Money GrossSalesMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -196,7 +196,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_tax_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalTaxMoney { get; }
+        public Models.Money TotalTaxMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -207,7 +207,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_discount_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalDiscountMoney { get; }
+        public Models.Money TotalDiscountMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -218,7 +218,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalMoney { get; }
+        public Models.Money TotalMoney { get; set; }
 
         /// <summary>
         /// Describes pricing adjustments that are blocked from manual and 
@@ -226,7 +226,7 @@ namespace Square.Models
         /// [Apply Taxes and Discounts](https://developer.squareup.com/docs/orders-api/apply-taxes-and-discounts).
         /// </summary>
         [JsonProperty("pricing_blocklists", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderLineItemPricingBlocklists PricingBlocklists { get; }
+        public Models.OrderLineItemPricingBlocklists PricingBlocklists { get; set; }
 
         public override string ToString()
         {
