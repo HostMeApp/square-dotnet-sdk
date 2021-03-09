@@ -15,7 +15,7 @@ namespace Square.Models
 {
     public class OrderLineItem 
     {
-        public OrderLineItem(string quantity,
+        public OrderLineItem(string quantity = "0",
             string uid = null,
             string name = null,
             Models.OrderQuantityUnit quantityUnit = null,
