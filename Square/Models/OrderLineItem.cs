@@ -23,9 +23,9 @@ namespace Square.Models
             string catalogObjectId = null,
             string variationName = null,
             IDictionary<string, string> metadata = null,
-            IList<Models.OrderLineItemModifier> modifiers = null,
-            IList<Models.OrderLineItemAppliedTax> appliedTaxes = null,
-            IList<Models.OrderLineItemAppliedDiscount> appliedDiscounts = null,
+            List<Models.OrderLineItemModifier> modifiers = null,
+            List<Models.OrderLineItemAppliedTax> appliedTaxes = null,
+            List<Models.OrderLineItemAppliedDiscount> appliedDiscounts = null,
             Models.Money basePriceMoney = null,
             Models.Money variationTotalPriceMoney = null,
             Models.Money grossSalesMoney = null,
@@ -124,7 +124,7 @@ namespace Square.Models
         /// The [CatalogModifier](#type-catalogmodifier)s applied to this line item.
         /// </summary>
         [JsonProperty("modifiers", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemModifier> Modifiers { get; set; }
+        public List<Models.OrderLineItemModifier> Modifiers { get; set; }
 
         /// <summary>
         /// The list of references to taxes applied to this line item. Each
@@ -138,7 +138,7 @@ namespace Square.Models
         /// To change the amount of a tax, modify the referenced top-level tax.
         /// </summary>
         [JsonProperty("applied_taxes", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemAppliedTax> AppliedTaxes { get; set; }
+        public List<Models.OrderLineItemAppliedTax> AppliedTaxes { get; set; }
 
         /// <summary>
         /// The list of references to discounts applied to this line item. Each
@@ -152,7 +152,7 @@ namespace Square.Models
         /// To change the amount of a discount, modify the referenced top-level discount.
         /// </summary>
         [JsonProperty("applied_discounts", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemAppliedDiscount> AppliedDiscounts { get; set; }
+        public List<Models.OrderLineItemAppliedDiscount> AppliedDiscounts { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -422,9 +422,9 @@ namespace Square.Models
             private string catalogObjectId;
             private string variationName;
             private IDictionary<string, string> metadata;
-            private IList<Models.OrderLineItemModifier> modifiers;
-            private IList<Models.OrderLineItemAppliedTax> appliedTaxes;
-            private IList<Models.OrderLineItemAppliedDiscount> appliedDiscounts;
+            private List<Models.OrderLineItemModifier> modifiers;
+            private List<Models.OrderLineItemAppliedTax> appliedTaxes;
+            private List<Models.OrderLineItemAppliedDiscount> appliedDiscounts;
             private Models.Money basePriceMoney;
             private Models.Money variationTotalPriceMoney;
             private Models.Money grossSalesMoney;
@@ -486,19 +486,19 @@ namespace Square.Models
                 return this;
             }
 
-            public Builder Modifiers(IList<Models.OrderLineItemModifier> modifiers)
+            public Builder Modifiers(List<Models.OrderLineItemModifier> modifiers)
             {
                 this.modifiers = modifiers;
                 return this;
             }
 
-            public Builder AppliedTaxes(IList<Models.OrderLineItemAppliedTax> appliedTaxes)
+            public Builder AppliedTaxes(List<Models.OrderLineItemAppliedTax> appliedTaxes)
             {
                 this.appliedTaxes = appliedTaxes;
                 return this;
             }
 
-            public Builder AppliedDiscounts(IList<Models.OrderLineItemAppliedDiscount> appliedDiscounts)
+            public Builder AppliedDiscounts(List<Models.OrderLineItemAppliedDiscount> appliedDiscounts)
             {
                 this.appliedDiscounts = appliedDiscounts;
                 return this;

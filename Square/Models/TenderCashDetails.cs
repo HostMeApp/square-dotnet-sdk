@@ -31,7 +31,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("buyer_tendered_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money BuyerTenderedMoney { get; }
+        public Models.Money BuyerTenderedMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -42,7 +42,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("change_back_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money ChangeBackMoney { get; }
+        public Models.Money ChangeBackMoney { get; set; }
 
         public override string ToString()
         {

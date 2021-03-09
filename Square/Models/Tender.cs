@@ -15,7 +15,7 @@ namespace Square.Models
 {
     public class Tender 
     {
-        public Tender(string type,
+        public Tender(string type = null,
             string id = null,
             string locationId = null,
             string transactionId = null,
@@ -50,31 +50,31 @@ namespace Square.Models
         /// The tender's unique ID.
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The ID of the transaction's associated location.
         /// </summary>
         [JsonProperty("location_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string LocationId { get; }
+        public string LocationId { get; set; }
 
         /// <summary>
         /// The ID of the tender's associated transaction.
         /// </summary>
         [JsonProperty("transaction_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string TransactionId { get; }
+        public string TransactionId { get; set; }
 
         /// <summary>
         /// The timestamp for when the tender was created, in RFC 3339 format.
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; }
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// An optional note associated with the tender at the time of payment.
         /// </summary>
         [JsonProperty("note", NullValueHandling = NullValueHandling.Ignore)]
-        public string Note { get; }
+        public string Note { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -85,7 +85,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("amount_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money AmountMoney { get; }
+        public Models.Money AmountMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -96,7 +96,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("tip_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TipMoney { get; }
+        public Models.Money TipMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -107,46 +107,46 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("processing_fee_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money ProcessingFeeMoney { get; }
+        public Models.Money ProcessingFeeMoney { get; set; }
 
         /// <summary>
         /// If the tender is associated with a customer or represents a customer's card on file,
         /// this is the ID of the associated customer.
         /// </summary>
         [JsonProperty("customer_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CustomerId { get; }
+        public string CustomerId { get; set; }
 
         /// <summary>
         /// Indicates a tender's type.
         /// </summary>
         [JsonProperty("type")]
-        public string Type { get; }
+        public string Type { get; set; }
 
         /// <summary>
         /// Represents additional details of a tender with `type` `CARD` or `SQUARE_GIFT_CARD`
         /// </summary>
         [JsonProperty("card_details", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.TenderCardDetails CardDetails { get; }
+        public Models.TenderCardDetails CardDetails { get; set; }
 
         /// <summary>
         /// Represents the details of a tender with `type` `CASH`.
         /// </summary>
         [JsonProperty("cash_details", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.TenderCashDetails CashDetails { get; }
+        public Models.TenderCashDetails CashDetails { get; set; }
 
         /// <summary>
         /// Additional recipients (other than the merchant) receiving a portion of this tender.
         /// For example, fees assessed on the purchase by a third party integration.
         /// </summary>
         [JsonProperty("additional_recipients", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.AdditionalRecipient> AdditionalRecipients { get; }
+        public IList<Models.AdditionalRecipient> AdditionalRecipients { get; set; }
 
         /// <summary>
         /// The ID of the [Payment](#type-payment) that corresponds to this tender.
         /// This value is only present for payments created with the v2 Payments API.
         /// </summary>
         [JsonProperty("payment_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string PaymentId { get; }
+        public string PaymentId { get; set; }
 
         public override string ToString()
         {

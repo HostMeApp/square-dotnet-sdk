@@ -20,17 +20,17 @@ namespace Square.Models
             string referenceId = null,
             Models.OrderSource source = null,
             string customerId = null,
-            IList<Models.OrderLineItem> lineItems = null,
-            IList<Models.OrderLineItemTax> taxes = null,
-            IList<Models.OrderLineItemDiscount> discounts = null,
-            IList<Models.OrderServiceCharge> serviceCharges = null,
-            IList<Models.OrderFulfillment> fulfillments = null,
-            IList<Models.OrderReturn> returns = null,
+            List<Models.OrderLineItem> lineItems = null,
+            List<Models.OrderLineItemTax> taxes = null,
+            List<Models.OrderLineItemDiscount> discounts = null,
+            List<Models.OrderServiceCharge> serviceCharges = null,
+            List<Models.OrderFulfillment> fulfillments = null,
+            List<Models.OrderReturn> returns = null,
             Models.OrderMoneyAmounts returnAmounts = null,
             Models.OrderMoneyAmounts netAmounts = null,
             Models.OrderRoundingAdjustment roundingAdjustment = null,
-            IList<Models.Tender> tenders = null,
-            IList<Models.Refund> refunds = null,
+            List<Models.Tender> tenders = null,
+            List<Models.Refund> refunds = null,
             IDictionary<string, string> metadata = null,
             string createdAt = null,
             string updatedAt = null,
@@ -43,7 +43,7 @@ namespace Square.Models
             Models.Money totalTipMoney = null,
             Models.Money totalServiceChargeMoney = null,
             Models.OrderPricingOptions pricingOptions = null,
-            IList<Models.OrderReward> rewards = null)
+            List<Models.OrderReward> rewards = null)
         {
             Id = id;
             LocationId = locationId;
@@ -111,7 +111,7 @@ namespace Square.Models
         /// The line items included in the order.
         /// </summary>
         [JsonProperty("line_items", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItem> LineItems { get; set; }
+        public List<Models.OrderLineItem> LineItems { get; set; }
 
         /// <summary>
         /// The list of all taxes associated with the order.
@@ -124,7 +124,7 @@ namespace Square.Models
         /// instead.
         /// </summary>
         [JsonProperty("taxes", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemTax> Taxes { get; set; }
+        public List<Models.OrderLineItemTax> Taxes { get; set; }
 
         /// <summary>
         /// The list of all discounts associated with the order.
@@ -137,13 +137,13 @@ namespace Square.Models
         /// instead.
         /// </summary>
         [JsonProperty("discounts", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderLineItemDiscount> Discounts { get; set; }
+        public List<Models.OrderLineItemDiscount> Discounts { get; set; }
 
         /// <summary>
         /// A list of service charges applied to the order.
         /// </summary>
         [JsonProperty("service_charges", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderServiceCharge> ServiceCharges { get; set; }
+        public List<Models.OrderServiceCharge> ServiceCharges { get; set; }
 
         /// <summary>
         /// Details on order fulfillment.
@@ -151,7 +151,7 @@ namespace Square.Models
         /// by the API may contain multiple fulfillments.
         /// </summary>
         [JsonProperty("fulfillments", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderFulfillment> Fulfillments { get; set; }
+        public List<Models.OrderFulfillment> Fulfillments { get; set; }
 
         /// <summary>
         /// Collection of items from sale Orders being returned in this one. Normally part of an
@@ -159,7 +159,7 @@ namespace Square.Models
         /// referenced.
         /// </summary>
         [JsonProperty("returns", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderReturn> Returns { get; set; }
+        public List<Models.OrderReturn> Returns { get; set; }
 
         /// <summary>
         /// A collection of various money amounts.
@@ -184,13 +184,13 @@ namespace Square.Models
         /// The Tenders which were used to pay for the Order.
         /// </summary>
         [JsonProperty("tenders", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.Tender> Tenders { get; set; }
+        public List<Models.Tender> Tenders { get; set; }
 
         /// <summary>
         /// The Refunds that are part of this Order.
         /// </summary>
         [JsonProperty("refunds", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.Refund> Refunds { get; set; }
+        public List<Models.Refund> Refunds { get; set; }
 
         /// <summary>
         /// Application-defined data attached to this order. Metadata fields are intended
@@ -310,7 +310,7 @@ namespace Square.Models
         /// A set-like list of rewards that have been added to the order.
         /// </summary>
         [JsonProperty("rewards", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.OrderReward> Rewards { get; set; }
+        public List<Models.OrderReward> Rewards { get; set; }
 
         public override string ToString()
         {
@@ -591,17 +591,17 @@ namespace Square.Models
             private string referenceId;
             private Models.OrderSource source;
             private string customerId;
-            private IList<Models.OrderLineItem> lineItems;
-            private IList<Models.OrderLineItemTax> taxes;
-            private IList<Models.OrderLineItemDiscount> discounts;
-            private IList<Models.OrderServiceCharge> serviceCharges;
-            private IList<Models.OrderFulfillment> fulfillments;
-            private IList<Models.OrderReturn> returns;
+            private List<Models.OrderLineItem> lineItems;
+            private List<Models.OrderLineItemTax> taxes;
+            private List<Models.OrderLineItemDiscount> discounts;
+            private List<Models.OrderServiceCharge> serviceCharges;
+            private List<Models.OrderFulfillment> fulfillments;
+            private List<Models.OrderReturn> returns;
             private Models.OrderMoneyAmounts returnAmounts;
             private Models.OrderMoneyAmounts netAmounts;
             private Models.OrderRoundingAdjustment roundingAdjustment;
-            private IList<Models.Tender> tenders;
-            private IList<Models.Refund> refunds;
+            private List<Models.Tender> tenders;
+            private List<Models.Refund> refunds;
             private IDictionary<string, string> metadata;
             private string createdAt;
             private string updatedAt;
@@ -614,7 +614,7 @@ namespace Square.Models
             private Models.Money totalTipMoney;
             private Models.Money totalServiceChargeMoney;
             private Models.OrderPricingOptions pricingOptions;
-            private IList<Models.OrderReward> rewards;
+            private List<Models.OrderReward> rewards;
 
             public Builder(string locationId)
             {
@@ -651,37 +651,37 @@ namespace Square.Models
                 return this;
             }
 
-            public Builder LineItems(IList<Models.OrderLineItem> lineItems)
+            public Builder LineItems(List<Models.OrderLineItem> lineItems)
             {
                 this.lineItems = lineItems;
                 return this;
             }
 
-            public Builder Taxes(IList<Models.OrderLineItemTax> taxes)
+            public Builder Taxes(List<Models.OrderLineItemTax> taxes)
             {
                 this.taxes = taxes;
                 return this;
             }
 
-            public Builder Discounts(IList<Models.OrderLineItemDiscount> discounts)
+            public Builder Discounts(List<Models.OrderLineItemDiscount> discounts)
             {
                 this.discounts = discounts;
                 return this;
             }
 
-            public Builder ServiceCharges(IList<Models.OrderServiceCharge> serviceCharges)
+            public Builder ServiceCharges(List<Models.OrderServiceCharge> serviceCharges)
             {
                 this.serviceCharges = serviceCharges;
                 return this;
             }
 
-            public Builder Fulfillments(IList<Models.OrderFulfillment> fulfillments)
+            public Builder Fulfillments(List<Models.OrderFulfillment> fulfillments)
             {
                 this.fulfillments = fulfillments;
                 return this;
             }
 
-            public Builder Returns(IList<Models.OrderReturn> returns)
+            public Builder Returns(List<Models.OrderReturn> returns)
             {
                 this.returns = returns;
                 return this;
@@ -705,13 +705,13 @@ namespace Square.Models
                 return this;
             }
 
-            public Builder Tenders(IList<Models.Tender> tenders)
+            public Builder Tenders(List<Models.Tender> tenders)
             {
                 this.tenders = tenders;
                 return this;
             }
 
-            public Builder Refunds(IList<Models.Refund> refunds)
+            public Builder Refunds(List<Models.Refund> refunds)
             {
                 this.refunds = refunds;
                 return this;
@@ -789,7 +789,7 @@ namespace Square.Models
                 return this;
             }
 
-            public Builder Rewards(IList<Models.OrderReward> rewards)
+            public Builder Rewards(List<Models.OrderReward> rewards)
             {
                 this.rewards = rewards;
                 return this;
