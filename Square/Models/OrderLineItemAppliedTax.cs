@@ -15,7 +15,8 @@ namespace Square.Models
 {
     public class OrderLineItemAppliedTax 
     {
-        public OrderLineItemAppliedTax(string taxUid,
+        public OrderLineItemAppliedTax(
+            string taxUid = null,
             string uid = null,
             Models.Money appliedMoney = null)
         {
