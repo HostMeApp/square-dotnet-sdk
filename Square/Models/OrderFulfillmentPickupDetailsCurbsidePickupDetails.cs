@@ -26,14 +26,14 @@ namespace Square.Models
         /// Specific details for curbside pickup, such as parking number, vehicle model, etc.
         /// </summary>
         [JsonProperty("curbside_details", NullValueHandling = NullValueHandling.Ignore)]
-        public string CurbsideDetails { get; }
+        public string CurbsideDetails { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) in RFC 3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z",
         /// indicating when the buyer arrived and is waiting for pickup.
         /// </summary>
         [JsonProperty("buyer_arrived_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string BuyerArrivedAt { get; }
+        public string BuyerArrivedAt { get; set; }
 
         public override string ToString()
         {

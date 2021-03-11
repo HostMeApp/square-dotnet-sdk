@@ -52,46 +52,46 @@ namespace Square.Models
         /// Contains information on the recipient of a fulfillment.
         /// </summary>
         [JsonProperty("recipient", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderFulfillmentRecipient Recipient { get; }
+        public Models.OrderFulfillmentRecipient Recipient { get; set; }
 
         /// <summary>
         /// The shipping carrier being used to ship this fulfillment
         /// e.g. UPS, FedEx, USPS, etc.
         /// </summary>
         [JsonProperty("carrier", NullValueHandling = NullValueHandling.Ignore)]
-        public string Carrier { get; }
+        public string Carrier { get; set; }
 
         /// <summary>
         /// A note with additional information for the shipping carrier.
         /// </summary>
         [JsonProperty("shipping_note", NullValueHandling = NullValueHandling.Ignore)]
-        public string ShippingNote { get; }
+        public string ShippingNote { get; set; }
 
         /// <summary>
         /// A description of the type of shipping product purchased from the carrier.
         /// e.g. First Class, Priority, Express
         /// </summary>
         [JsonProperty("shipping_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ShippingType { get; }
+        public string ShippingType { get; set; }
 
         /// <summary>
         /// The reference number provided by the carrier to track the shipment's progress.
         /// </summary>
         [JsonProperty("tracking_number", NullValueHandling = NullValueHandling.Ignore)]
-        public string TrackingNumber { get; }
+        public string TrackingNumber { get; set; }
 
         /// <summary>
         /// A link to the tracking webpage on the carrier's website.
         /// </summary>
         [JsonProperty("tracking_url", NullValueHandling = NullValueHandling.Ignore)]
-        public string TrackingUrl { get; }
+        public string TrackingUrl { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the shipment was
         /// requested. Must be in RFC 3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("placed_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string PlacedAt { get; }
+        public string PlacedAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when this fulfillment was
@@ -99,7 +99,7 @@ namespace Square.Models
         /// Must be in RFC 3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("in_progress_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string InProgressAt { get; }
+        public string InProgressAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when this fulfillment
@@ -107,7 +107,7 @@ namespace Square.Models
         /// Must be in RFC 3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("packaged_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string PackagedAt { get; }
+        public string PackagedAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the shipment is
@@ -115,7 +115,7 @@ namespace Square.Models
         /// format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("expected_shipped_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpectedShippedAt { get; }
+        public string ExpectedShippedAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when this fulfillment
@@ -123,20 +123,20 @@ namespace Square.Models
         /// to the shipping carrier. Must be in RFC 3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("shipped_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string ShippedAt { get; }
+        public string ShippedAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating the shipment was canceled.
         /// Must be in RFC 3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("canceled_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CanceledAt { get; }
+        public string CanceledAt { get; set; }
 
         /// <summary>
         /// A description of why the shipment was canceled.
         /// </summary>
         [JsonProperty("cancel_reason", NullValueHandling = NullValueHandling.Ignore)]
-        public string CancelReason { get; }
+        public string CancelReason { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the shipment
@@ -144,13 +144,13 @@ namespace Square.Models
         /// "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("failed_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string FailedAt { get; }
+        public string FailedAt { get; set; }
 
         /// <summary>
         /// A description of why the shipment failed to be completed.
         /// </summary>
         [JsonProperty("failure_reason", NullValueHandling = NullValueHandling.Ignore)]
-        public string FailureReason { get; }
+        public string FailureReason { get; set; }
 
         public override string ToString()
         {

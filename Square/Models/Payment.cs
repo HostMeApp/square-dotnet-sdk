@@ -80,19 +80,19 @@ namespace Square.Models
         /// A unique ID for the payment.
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
-        public string Id { get; }
+        public string Id { get; set; }
 
         /// <summary>
         /// The timestamp of when the payment was created, in RFC 3339 format.
         /// </summary>
         [JsonProperty("created_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CreatedAt { get; }
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// The timestamp of when the payment was last updated, in RFC 3339 format.
         /// </summary>
         [JsonProperty("updated_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string UpdatedAt { get; }
+        public string UpdatedAt { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -103,7 +103,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("amount_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money AmountMoney { get; }
+        public Models.Money AmountMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -114,7 +114,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("tip_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TipMoney { get; }
+        public Models.Money TipMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -125,7 +125,7 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("total_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money TotalMoney { get; }
+        public Models.Money TotalMoney { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -136,13 +136,13 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("app_fee_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money AppFeeMoney { get; }
+        public Models.Money AppFeeMoney { get; set; }
 
         /// <summary>
         /// The processing fees and fee adjustments assessed by Square for this payment.
         /// </summary>
         [JsonProperty("processing_fee", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<Models.ProcessingFee> ProcessingFee { get; }
+        public IList<Models.ProcessingFee> ProcessingFee { get; set; }
 
         /// <summary>
         /// Represents an amount of money. `Money` fields can be signed or unsigned.
@@ -153,13 +153,13 @@ namespace Square.Models
         /// for more information.
         /// </summary>
         [JsonProperty("refunded_money", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Money RefundedMoney { get; }
+        public Models.Money RefundedMoney { get; set; }
 
         /// <summary>
         /// Indicates whether the payment is APPROVED, COMPLETED, CANCELED, or FAILED.
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public string Status { get; }
+        public string Status { get; set; }
 
         /// <summary>
         /// The duration of time after the payment's creation when Square automatically applies the
@@ -174,7 +174,7 @@ namespace Square.Models
         /// - Card-not-present payments: "P7D" (7 days) from the creation time.
         /// </summary>
         [JsonProperty("delay_duration", NullValueHandling = NullValueHandling.Ignore)]
-        public string DelayDuration { get; }
+        public string DelayDuration { get; set; }
 
         /// <summary>
         /// The action to be applied to the payment when the `delay_duration` has elapsed. This field
@@ -182,7 +182,7 @@ namespace Square.Models
         /// Current values include `CANCEL`.
         /// </summary>
         [JsonProperty("delay_action", NullValueHandling = NullValueHandling.Ignore)]
-        public string DelayAction { get; }
+        public string DelayAction { get; set; }
 
         /// <summary>
         /// The read-only timestamp of when the `delay_action` is automatically applied,
@@ -192,57 +192,57 @@ namespace Square.Models
         /// time on your local machine.
         /// </summary>
         [JsonProperty("delayed_until", NullValueHandling = NullValueHandling.Ignore)]
-        public string DelayedUntil { get; }
+        public string DelayedUntil { get; set; }
 
         /// <summary>
         /// The source type for this payment.
         /// Current values include `CARD`.
         /// </summary>
         [JsonProperty("source_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string SourceType { get; }
+        public string SourceType { get; set; }
 
         /// <summary>
         /// Reflects the current status of a card payment.
         /// </summary>
         [JsonProperty("card_details", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.CardPaymentDetails CardDetails { get; }
+        public Models.CardPaymentDetails CardDetails { get; set; }
 
         /// <summary>
         /// The ID of the location associated with the payment.
         /// </summary>
         [JsonProperty("location_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string LocationId { get; }
+        public string LocationId { get; set; }
 
         /// <summary>
         /// The ID of the order associated with the payment.
         /// </summary>
         [JsonProperty("order_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string OrderId { get; }
+        public string OrderId { get; set; }
 
         /// <summary>
         /// An optional ID that associates the payment with an entity in
         /// another system.
         /// </summary>
         [JsonProperty("reference_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReferenceId { get; }
+        public string ReferenceId { get; set; }
 
         /// <summary>
         /// The [Customer](#type-customer) ID of the customer associated with the payment.
         /// </summary>
         [JsonProperty("customer_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CustomerId { get; }
+        public string CustomerId { get; set; }
 
         /// <summary>
         /// An optional ID of the employee associated with taking the payment.
         /// </summary>
         [JsonProperty("employee_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string EmployeeId { get; }
+        public string EmployeeId { get; set; }
 
         /// <summary>
         /// A list of `refund_id`s identifying refunds for the payment.
         /// </summary>
         [JsonProperty("refund_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<string> RefundIds { get; }
+        public IList<string> RefundIds { get; set; }
 
         /// <summary>
         /// Represents fraud risk information for the associated payment.
@@ -252,31 +252,31 @@ namespace Square.Models
         /// provide the goods/services or refund the payment).
         /// </summary>
         [JsonProperty("risk_evaluation", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.RiskEvaluation RiskEvaluation { get; }
+        public Models.RiskEvaluation RiskEvaluation { get; set; }
 
         /// <summary>
         /// The buyer's email address.
         /// </summary>
         [JsonProperty("buyer_email_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string BuyerEmailAddress { get; }
+        public string BuyerEmailAddress { get; set; }
 
         /// <summary>
         /// Represents a physical address.
         /// </summary>
         [JsonProperty("billing_address", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address BillingAddress { get; }
+        public Models.Address BillingAddress { get; set; }
 
         /// <summary>
         /// Represents a physical address.
         /// </summary>
         [JsonProperty("shipping_address", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address ShippingAddress { get; }
+        public Models.Address ShippingAddress { get; set; }
 
         /// <summary>
         /// An optional note to include when creating a payment.
         /// </summary>
         [JsonProperty("note", NullValueHandling = NullValueHandling.Ignore)]
-        public string Note { get; }
+        public string Note { get; set; }
 
         /// <summary>
         /// Additional payment information that gets added to the customer's card statement
@@ -286,21 +286,21 @@ namespace Square.Models
         /// seller taking the payment.
         /// </summary>
         [JsonProperty("statement_description_identifier", NullValueHandling = NullValueHandling.Ignore)]
-        public string StatementDescriptionIdentifier { get; }
+        public string StatementDescriptionIdentifier { get; set; }
 
         /// <summary>
         /// The payment's receipt number.
         /// The field is missing if a payment is canceled.
         /// </summary>
         [JsonProperty("receipt_number", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReceiptNumber { get; }
+        public string ReceiptNumber { get; set; }
 
         /// <summary>
         /// The URL for the payment's receipt.
         /// The field is only populated for COMPLETED payments.
         /// </summary>
         [JsonProperty("receipt_url", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReceiptUrl { get; }
+        public string ReceiptUrl { get; set; }
 
         public override string ToString()
         {

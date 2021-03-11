@@ -38,34 +38,34 @@ namespace Square.Models
         /// these fields are left unset, the request will result in an error.
         /// </summary>
         [JsonProperty("customer_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string CustomerId { get; }
+        public string CustomerId { get; set; }
 
         /// <summary>
         /// The display name of the fulfillment recipient.
         /// If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
         /// </summary>
         [JsonProperty("display_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string DisplayName { get; }
+        public string DisplayName { get; set; }
 
         /// <summary>
         /// The email address of the fulfillment recipient.
         /// If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
         /// </summary>
         [JsonProperty("email_address", NullValueHandling = NullValueHandling.Ignore)]
-        public string EmailAddress { get; }
+        public string EmailAddress { get; set; }
 
         /// <summary>
         /// The phone number of the fulfillment recipient.
         /// If provided, overrides the value pulled from the customer profile indicated by `customer_id`.
         /// </summary>
         [JsonProperty("phone_number", NullValueHandling = NullValueHandling.Ignore)]
-        public string PhoneNumber { get; }
+        public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Represents a physical address.
         /// </summary>
         [JsonProperty("address", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.Address Address { get; }
+        public Models.Address Address { get; set; }
 
         public override string ToString()
         {

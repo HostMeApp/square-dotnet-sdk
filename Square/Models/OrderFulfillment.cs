@@ -34,19 +34,19 @@ namespace Square.Models
         /// Unique ID that identifies the fulfillment only within this order.
         /// </summary>
         [JsonProperty("uid", NullValueHandling = NullValueHandling.Ignore)]
-        public string Uid { get; }
+        public string Uid { get; set; }
 
         /// <summary>
         /// The type of fulfillment.
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-        public string Type { get; }
+        public string Type { get; set; }
 
         /// <summary>
         /// The current state of this fulfillment.
         /// </summary>
         [JsonProperty("state", NullValueHandling = NullValueHandling.Ignore)]
-        public string State { get; }
+        public string State { get; set; }
 
         /// <summary>
         /// Application-defined data attached to this fulfillment. Metadata fields are intended
@@ -64,19 +64,19 @@ namespace Square.Models
         /// See [Metadata](https://developer.squareup.com/docs/build-basics/metadata) for more information.
         /// </summary>
         [JsonProperty("metadata", NullValueHandling = NullValueHandling.Ignore)]
-        public IDictionary<string, string> Metadata { get; }
+        public IDictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// Contains details necessary to fulfill a pickup order.
         /// </summary>
         [JsonProperty("pickup_details", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderFulfillmentPickupDetails PickupDetails { get; }
+        public Models.OrderFulfillmentPickupDetails PickupDetails { get; set; }
 
         /// <summary>
         /// Contains details necessary to fulfill a shipment order.
         /// </summary>
         [JsonProperty("shipment_details", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderFulfillmentShipmentDetails ShipmentDetails { get; }
+        public Models.OrderFulfillmentShipmentDetails ShipmentDetails { get; set; }
 
         public override string ToString()
         {

@@ -58,7 +58,7 @@ namespace Square.Models
         /// Contains information on the recipient of a fulfillment.
         /// </summary>
         [JsonProperty("recipient", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderFulfillmentRecipient Recipient { get; }
+        public Models.OrderFulfillmentRecipient Recipient { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when this fulfillment
@@ -68,7 +68,7 @@ namespace Square.Models
         /// will be automatically accepted when placed.
         /// </summary>
         [JsonProperty("expires_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpiresAt { get; }
+        public string ExpiresAt { get; set; }
 
         /// <summary>
         /// The duration of time after which an open and accepted pickup fulfillment
@@ -77,13 +77,13 @@ namespace Square.Models
         /// If not set, this pickup fulfillment will remain accepted until it is canceled or completed.
         /// </summary>
         [JsonProperty("auto_complete_duration", NullValueHandling = NullValueHandling.Ignore)]
-        public string AutoCompleteDuration { get; }
+        public string AutoCompleteDuration { get; set; }
 
         /// <summary>
         /// The schedule type of the pickup fulfillment.
         /// </summary>
         [JsonProperty("schedule_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ScheduleType { get; }
+        public string ScheduleType { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) that represents the start of the pickup window.
@@ -92,7 +92,7 @@ namespace Square.Models
         /// to the current time plus the expected duration to prepare the fulfillment.
         /// </summary>
         [JsonProperty("pickup_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string PickupAt { get; }
+        public string PickupAt { get; set; }
 
         /// <summary>
         /// The window of time in which the order should be picked up after the `pickup_at` timestamp.
@@ -100,28 +100,28 @@ namespace Square.Models
         /// informational guideline for merchants.
         /// </summary>
         [JsonProperty("pickup_window_duration", NullValueHandling = NullValueHandling.Ignore)]
-        public string PickupWindowDuration { get; }
+        public string PickupWindowDuration { get; set; }
 
         /// <summary>
         /// The duration of time it takes to prepare this fulfillment.
         /// Must be in RFC3339 duration format, e.g., "P1W3D".
         /// </summary>
         [JsonProperty("prep_time_duration", NullValueHandling = NullValueHandling.Ignore)]
-        public string PrepTimeDuration { get; }
+        public string PrepTimeDuration { get; set; }
 
         /// <summary>
         /// A note meant to provide additional instructions about the pickup
         /// fulfillment displayed in the Square Point of Sale and set by the API.
         /// </summary>
         [JsonProperty("note", NullValueHandling = NullValueHandling.Ignore)]
-        public string Note { get; }
+        public string Note { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the fulfillment
         /// was placed. Must be in RFC3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("placed_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string PlacedAt { get; }
+        public string PlacedAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the fulfillment
@@ -129,28 +129,28 @@ namespace Square.Models
         /// e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("accepted_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string AcceptedAt { get; }
+        public string AcceptedAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the fulfillment
         /// was rejected. In RFC3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("rejected_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string RejectedAt { get; }
+        public string RejectedAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the fulfillment is
         /// marked as ready for pickup. In RFC3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("ready_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string ReadyAt { get; }
+        public string ReadyAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the fulfillment expired.
         /// In RFC3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("expired_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string ExpiredAt { get; }
+        public string ExpiredAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) indicating when the fulfillment
@@ -158,32 +158,32 @@ namespace Square.Models
         /// e.g., "2016-09-04T23:59:33.123Z".
         /// </summary>
         [JsonProperty("picked_up_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string PickedUpAt { get; }
+        public string PickedUpAt { get; set; }
 
         /// <summary>
         /// The [timestamp](#workingwithdates) in RFC3339 timestamp format, e.g., "2016-09-04T23:59:33.123Z",
         /// indicating when the fulfillment was canceled.
         /// </summary>
         [JsonProperty("canceled_at", NullValueHandling = NullValueHandling.Ignore)]
-        public string CanceledAt { get; }
+        public string CanceledAt { get; set; }
 
         /// <summary>
         /// A description of why the pickup was canceled. Max length: 100 characters.
         /// </summary>
         [JsonProperty("cancel_reason", NullValueHandling = NullValueHandling.Ignore)]
-        public string CancelReason { get; }
+        public string CancelReason { get; set; }
 
         /// <summary>
         /// If true, indicates this pickup order is for curbside pickup, not in-store pickup.
         /// </summary>
         [JsonProperty("is_curbside_pickup", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? IsCurbsidePickup { get; }
+        public bool? IsCurbsidePickup { get; set; }
 
         /// <summary>
         /// Specific details for curbside pickup.
         /// </summary>
         [JsonProperty("curbside_pickup_details", NullValueHandling = NullValueHandling.Ignore)]
-        public Models.OrderFulfillmentPickupDetailsCurbsidePickupDetails CurbsidePickupDetails { get; }
+        public Models.OrderFulfillmentPickupDetailsCurbsidePickupDetails CurbsidePickupDetails { get; set; }
 
         public override string ToString()
         {

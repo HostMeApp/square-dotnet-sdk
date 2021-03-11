@@ -15,7 +15,7 @@ namespace Square.Models
 {
     public class PayOrderRequest 
     {
-        public PayOrderRequest(string idempotencyKey,
+        public PayOrderRequest(string idempotencyKey = null,
             int? orderVersion = null,
             IList<string> paymentIds = null)
         {
@@ -31,20 +31,20 @@ namespace Square.Models
         /// See [Idempotency](https://developer.squareup.com/docs/working-with-apis/idempotency) for more information.
         /// </summary>
         [JsonProperty("idempotency_key")]
-        public string IdempotencyKey { get; }
+        public string IdempotencyKey { get; set; }
 
         /// <summary>
         /// The version of the order being paid. If not supplied, the latest version will be paid.
         /// </summary>
         [JsonProperty("order_version", NullValueHandling = NullValueHandling.Ignore)]
-        public int? OrderVersion { get; }
+        public int? OrderVersion { get; set; }
 
         /// <summary>
         /// The IDs of the [payments](#type-payment) to collect.
         /// The payment total must match the order total.
         /// </summary>
         [JsonProperty("payment_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public IList<string> PaymentIds { get; }
+        public IList<string> PaymentIds { get; set; }
 
         public override string ToString()
         {
