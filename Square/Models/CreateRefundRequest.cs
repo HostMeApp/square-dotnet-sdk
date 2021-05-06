@@ -16,12 +16,12 @@ namespace Square.Models
     public class CreateRefundRequest 
     {
         public CreateRefundRequest(string idempotencyKey,
-            string tenderId,
+            string paymentId,
             Models.Money amountMoney,
             string reason = null)
         {
             IdempotencyKey = idempotencyKey;
-            TenderId = tenderId;
+            PaymentId = paymentId;
             Reason = reason;
             AmountMoney = amountMoney;
         }
@@ -43,8 +43,8 @@ namespace Square.Models
         /// of payment) associated with it, and you refund each tender separately with
         /// the Connect API.
         /// </summary>
-        [JsonProperty("tender_id")]
-        public string TenderId { get; }
+        [JsonProperty("payment_id")]
+        public string PaymentId { get; }
 
         /// <summary>
         /// A description of the reason for the refund.
@@ -76,7 +76,7 @@ namespace Square.Models
         protected void ToString(List<string> toStringOutput)
         {
             toStringOutput.Add($"IdempotencyKey = {(IdempotencyKey == null ? "null" : IdempotencyKey == string.Empty ? "" : IdempotencyKey)}");
-            toStringOutput.Add($"TenderId = {(TenderId == null ? "null" : TenderId == string.Empty ? "" : TenderId)}");
+            toStringOutput.Add($"PaymentId = {(PaymentId == null ? "null" : PaymentId == string.Empty ? "" : PaymentId)}");
             toStringOutput.Add($"Reason = {(Reason == null ? "null" : Reason == string.Empty ? "" : Reason)}");
             toStringOutput.Add($"AmountMoney = {(AmountMoney == null ? "null" : AmountMoney.ToString())}");
         }
@@ -95,7 +95,7 @@ namespace Square.Models
 
             return obj is CreateRefundRequest other &&
                 ((IdempotencyKey == null && other.IdempotencyKey == null) || (IdempotencyKey?.Equals(other.IdempotencyKey) == true)) &&
-                ((TenderId == null && other.TenderId == null) || (TenderId?.Equals(other.TenderId) == true)) &&
+                ((PaymentId == null && other.PaymentId == null) || (PaymentId?.Equals(other.PaymentId) == true)) &&
                 ((Reason == null && other.Reason == null) || (Reason?.Equals(other.Reason) == true)) &&
                 ((AmountMoney == null && other.AmountMoney == null) || (AmountMoney?.Equals(other.AmountMoney) == true));
         }
@@ -109,9 +109,9 @@ namespace Square.Models
                hashCode += IdempotencyKey.GetHashCode();
             }
 
-            if (TenderId != null)
+            if (PaymentId != null)
             {
-               hashCode += TenderId.GetHashCode();
+               hashCode += PaymentId.GetHashCode();
             }
 
             if (Reason != null)
@@ -130,7 +130,7 @@ namespace Square.Models
         public Builder ToBuilder()
         {
             var builder = new Builder(IdempotencyKey,
-                TenderId,
+                PaymentId,
                 AmountMoney)
                 .Reason(Reason);
             return builder;
@@ -139,16 +139,16 @@ namespace Square.Models
         public class Builder
         {
             private string idempotencyKey;
-            private string tenderId;
+            private string paymentId;
             private Models.Money amountMoney;
             private string reason;
 
             public Builder(string idempotencyKey,
-                string tenderId,
+                string paymentId,
                 Models.Money amountMoney)
             {
                 this.idempotencyKey = idempotencyKey;
-                this.tenderId = tenderId;
+                this.paymentId = paymentId;
                 this.amountMoney = amountMoney;
             }
 
@@ -158,9 +158,9 @@ namespace Square.Models
                 return this;
             }
 
-            public Builder TenderId(string tenderId)
+            public Builder PaymentId(string paymentId)
             {
-                this.tenderId = tenderId;
+                this.paymentId = paymentId;
                 return this;
             }
 
@@ -179,7 +179,7 @@ namespace Square.Models
             public CreateRefundRequest Build()
             {
                 return new CreateRefundRequest(idempotencyKey,
-                    tenderId,
+                    paymentId,
                     amountMoney,
                     reason);
             }
